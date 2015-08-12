@@ -9,6 +9,25 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    NSTimer *multiTimer;
+    UIFont *multiFont;
+    BOOL paused;
+    float hz, period;
+}
+
+@property (readonly) NSArray *eye;
+@property (readonly) NSArray *mouth;
+@property (readonly) UIView *lineView;
+@property (strong, nonatomic) IBOutlet UILabel *leftEyeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *rightEyeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *mouthLabel;
+@property (strong, nonatomic) IBOutlet UILabel *hzLabel;
+
+- (IBAction)tapAction:(UITapGestureRecognizer *)sender;
+- (IBAction)panAction:(UIPanGestureRecognizer *)sender;
+- (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender;
+- (IBAction)longPressAction:(UILongPressGestureRecognizer *)sender;
 
 
 @end
