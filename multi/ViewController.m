@@ -169,7 +169,6 @@
 
 - (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender
 {
-    NSLog(@"double tap!");
     [self takeScreenshot];
 }
 
