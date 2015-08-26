@@ -19,6 +19,7 @@
 @property (readonly) NSArray *eye;
 @property (readonly) NSArray *mouth;
 @property (readonly) UIView *lineView;
+
 @property (strong, nonatomic) IBOutlet UILabel *leftEyeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *rightEyeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *mouthLabel;

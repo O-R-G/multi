@@ -144,7 +144,7 @@
     CGRect frame = lineView.frame;
     frame.origin = CGPointMake(lineView.frame.origin.x, location.y);
     lineView.frame = frame;
-    hz += (translation.y / incrementSize);
+    hz -= (translation.y / incrementSize);
     if(hz < 0.1f)
         hz = 0.1f;
     if(hz > 30.f)
