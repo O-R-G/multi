@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A07D23B1B7AE5C90021E7CA /* Wattis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */; };
+		2A189E291B9F5BFB008D605C /* BD.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A189E281B9F5BFB008D605C /* BD.wav */; };
 		2A373EDA1B7AB25D004CFD99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373ED91B7AB25D004CFD99 /* main.m */; };
 		2A373EDD1B7AB25D004CFD99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EDC1B7AB25D004CFD99 /* AppDelegate.m */; };
 		2A373EE01B7AB25D004CFD99 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EDF1B7AB25D004CFD99 /* ViewController.m */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Wattis-Regular.ttf"; sourceTree = "<group>"; };
+		2A189E281B9F5BFB008D605C /* BD.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BD.wav; sourceTree = "<group>"; };
 		2A373ED41B7AB25D004CFD99 /* multi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = multi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A373ED81B7AB25D004CFD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A373ED91B7AB25D004CFD99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,11 +85,12 @@
 		2A373ED61B7AB25D004CFD99 /* multi */ = {
 			isa = PBXGroup;
 			children = (
+				2A189E281B9F5BFB008D605C /* BD.wav */,
+				2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */,
 				2A373EDB1B7AB25D004CFD99 /* AppDelegate.h */,
 				2A373EDC1B7AB25D004CFD99 /* AppDelegate.m */,
 				2A373EDE1B7AB25D004CFD99 /* ViewController.h */,
 				2A373EDF1B7AB25D004CFD99 /* ViewController.m */,
-				2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */,
 				2A373EE11B7AB25D004CFD99 /* Main.storyboard */,
 				2A373EE41B7AB25D004CFD99 /* Images.xcassets */,
 				2A373EE61B7AB25D004CFD99 /* LaunchScreen.xib */,
@@ -203,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A189E291B9F5BFB008D605C /* BD.wav in Resources */,
 				2A373EE31B7AB25D004CFD99 /* Main.storyboard in Resources */,
 				2A07D23B1B7AE5C90021E7CA /* Wattis-Regular.ttf in Resources */,
 				2A373EE81B7AB25D004CFD99 /* LaunchScreen.xib in Resources */,

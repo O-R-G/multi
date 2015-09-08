@@ -28,16 +28,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9U-WH-F3z">
                                 <rect key="frame" x="0.0" y="273" width="600" height="145"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="80"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="160"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="`" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggc-BH-wjl">
-                                <rect key="frame" x="300" y="128" width="260" height="145"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="80"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="110"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -50,13 +41,22 @@
                                     <constraint firstAttribute="height" constant="145" id="JHv-tv-nuD"/>
                                     <constraint firstAttribute="height" constant="100" id="sKl-uE-krv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="80"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="110"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="sKl-uE-krv"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="160"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="`" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggc-BH-wjl">
+                                <rect key="frame" x="300" y="128" width="260" height="145"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="110"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="160"/>
                                 </variation>

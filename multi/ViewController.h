@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController : UIViewController
 {
@@ -19,11 +20,13 @@
 @property (readonly) NSArray *eye;
 @property (readonly) NSArray *mouth;
 @property (readonly) UIView *lineView;
+@property (readonly) SystemSoundID soundFileObject;
 
 @property (strong, nonatomic) IBOutlet UILabel *leftEyeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *rightEyeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *mouthLabel;
 @property (strong, nonatomic) IBOutlet UILabel *hzLabel;
+
 
 - (IBAction)tapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)panAction:(UIPanGestureRecognizer *)sender;

@@ -21,6 +21,7 @@
 @synthesize rightEyeLabel;
 @synthesize mouthLabel;
 @synthesize hzLabel;
+@synthesize soundFileObject;
 
 - (void)viewDidLoad
 {
@@ -43,6 +44,14 @@
     mouthLabel.font = multiFont;
     CGFloat w = self.view.bounds.size.width;
     CGFloat lineWidth = 50;
+    
+    // Get the main bundle for the app
+    CFBundleRef mainBundle = CFBundleGetMainBundle ();
+    // Get the URL to the sound file to play.
+    // The file in this case is "BD.wav"
+    CFURLRef soundFileURLRef = CFBundleCopyResourceURL(mainBundle, CFSTR ("BD"), CFSTR ("wav"), NULL);
+    // Create a system sound object representing the sound file
+    AudioServicesCreateSystemSoundID(soundFileURLRef, &soundFileObject);
     
     lineView = [[UIView alloc] initWithFrame:CGRectMake(w-lineWidth, 0, lineWidth, 2)];
     lineView.backgroundColor = [UIColor blackColor];
@@ -88,6 +97,8 @@
 
 - (void) multiTimerCallBack
 {
+    AudioServicesPlaySystemSound (self.soundFileObject);
+    // AudioServicesPlaySystemSound (1305);
     int i = arc4random_uniform((int)eye.count);
     self.leftEyeLabel.text = eye[i];
     i = arc4random_uniform((int)eye.count);
@@ -118,11 +129,17 @@
     flashView.alpha = 1.0f;
     [window addSubview:flashView];
     
-    [UIView animateWithDuration:0.5f animations:^{
-        flashView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        [flashView removeFromSuperview];
-    }];
+    [UIView
+        animateWithDuration:0.75f animations:^{
+            flashView.alpha = 0.0f;
+        }
+        completion:^(BOOL finished) {
+            [flashView removeFromSuperview];
+        }
+     ];
+    
+    // play camera sound
+    AudioServicesPlaySystemSound(1108);
 }
 
 - (IBAction)tapAction:(UITapGestureRecognizer *)sender
@@ -169,13 +186,22 @@
 
 - (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender
 {
+    // pause
+    if(!paused)
+        [self killTimer];
+    
     [self takeScreenshot];
 }
 
 - (IBAction)longPressAction:(UILongPressGestureRecognizer *)sender
 {
     if(sender.state == UIGestureRecognizerStateBegan)
+    {
+        // pause
+        if(!paused)
+            [self killTimer];
         [self takeScreenshot];
+    }
 }
 
 @end
