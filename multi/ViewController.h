@@ -26,13 +26,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *rightEyeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *mouthLabel;
 @property (strong, nonatomic) IBOutlet UILabel *hzLabel;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *singleTapRecognizer;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *doubleTapRecognizer;
 
-
-- (IBAction)tapAction:(UITapGestureRecognizer *)sender;
-- (IBAction)panAction:(UIPanGestureRecognizer *)sender;
+- (IBAction)singleTapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender;
+- (IBAction)twoFingerTapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)longPressAction:(UILongPressGestureRecognizer *)sender;
-
+- (IBAction)panAction:(UIPanGestureRecognizer *)sender;
 
 @end
 

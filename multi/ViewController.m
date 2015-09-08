@@ -22,6 +22,8 @@
 @synthesize mouthLabel;
 @synthesize hzLabel;
 @synthesize soundFileObject;
+@synthesize singleTapRecognizer;
+@synthesize doubleTapRecognizer;
 
 - (void)viewDidLoad
 {
@@ -57,6 +59,8 @@
     lineView.backgroundColor = [UIColor blackColor];
     lineView.hidden = YES;
     [self.view addSubview:lineView];
+    
+    [singleTapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
     
     [self initTimer];
 }
@@ -142,7 +146,13 @@
     AudioServicesPlaySystemSound(1108);
 }
 
-- (IBAction)tapAction:(UITapGestureRecognizer *)sender
+// ------------------------------------------------------
+// ACTIONS
+// ------------------------------------------------------
+
+// action: single tap
+// result: pause
+- (IBAction)singleTapAction:(UITapGestureRecognizer *)sender
 {
     if(paused)
         [self initTimer];
@@ -150,41 +160,16 @@
         [self killTimer];
 }
 
-- (IBAction)panAction:(UIPanGestureRecognizer *)sender
-{
-    hzLabel.hidden = NO;
-    lineView.hidden = NO;
-    
-    float incrementSize = 1000.f;
-    CGPoint translation = [sender translationInView:self.view];
-    CGPoint location = [sender locationInView:self.view];
-    CGRect frame = lineView.frame;
-    frame.origin = CGPointMake(lineView.frame.origin.x, location.y);
-    lineView.frame = frame;
-    hz -= (translation.y / incrementSize);
-    if(hz < 0.1f)
-        hz = 0.1f;
-    if(hz > 30.f)
-        hz = 30.f;
-    hzLabel.text = [NSString stringWithFormat:@"%1.2f Hz", hz];
-    period = 1.f/hz;
-    
-    if(paused)
-        [self initTimer];
-    else
-    {
-        [self killTimer];
-        [self initTimer];
-    }
-    
-    if(sender.state == UIGestureRecognizerStateEnded)
-    {
-        hzLabel.hidden = YES;
-        lineView.hidden = YES;
-    }
-}
-
+// action: double tap
+// result: show / hide hz label
 - (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender
+{
+    self.hzLabel.hidden = !self.hzLabel.hidden;
+}
+
+// action: tap with two fingers
+// result: take screenshot
+- (IBAction)twoFingerTapAction:(UITapGestureRecognizer *)sender
 {
     // pause
     if(!paused)
@@ -193,6 +178,8 @@
     [self takeScreenshot];
 }
 
+// action: press and hold
+// resutl: take screenshots
 - (IBAction)longPressAction:(UILongPressGestureRecognizer *)sender
 {
     if(sender.state == UIGestureRecognizerStateBegan)
@@ -201,6 +188,41 @@
         if(!paused)
             [self killTimer];
         [self takeScreenshot];
+    }
+}
+
+// action: slide one finger up + down screen
+// result: change Hz
+- (IBAction)panAction:(UIPanGestureRecognizer *)sender
+{
+    if(!self.hzLabel.hidden)
+    {
+        lineView.hidden = NO;
+        
+        float incrementSize = 1000.f;
+        CGPoint translation = [sender translationInView:self.view];
+        CGPoint location = [sender locationInView:self.view];
+        CGRect frame = lineView.frame;
+        frame.origin = CGPointMake(lineView.frame.origin.x, location.y);
+        lineView.frame = frame;
+        hz -= (translation.y / incrementSize);
+        if(hz < 0.1f)
+            hz = 0.1f;
+        if(hz > 30.f)
+            hz = 30.f;
+        hzLabel.text = [NSString stringWithFormat:@"%1.2f Hz", hz];
+        period = 1.f/hz;
+        
+        if(paused)
+            [self initTimer];
+        else
+        {
+            [self killTimer];
+            [self initTimer];
+        }
+        
+        if(sender.state == UIGestureRecognizerStateEnded)
+            lineView.hidden = YES;
     }
 }
 

@@ -103,25 +103,33 @@
                             <outletCollection property="gestureRecognizers" destination="Rzx-0a-8Ur" appends="YES" id="l6S-Ci-efZ"/>
                             <outletCollection property="gestureRecognizers" destination="1Y9-5o-aGa" appends="YES" id="yWX-yh-wAe"/>
                             <outletCollection property="gestureRecognizers" destination="md2-qr-nbQ" appends="YES" id="CyA-wX-kR2"/>
+                            <outletCollection property="gestureRecognizers" destination="ZgY-Gz-rIK" appends="YES" id="aTH-FO-Fc5"/>
                         </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="doubleTapRecognizer" destination="ZgY-Gz-rIK" id="YAI-OV-8yq"/>
                         <outlet property="hzLabel" destination="skQ-gD-rGv" id="Nyq-ej-wEB"/>
                         <outlet property="leftEyeLabel" destination="S4c-va-3dC" id="bId-mJ-5Gn"/>
                         <outlet property="mouthLabel" destination="L9U-WH-F3z" id="eK3-r3-AR0"/>
                         <outlet property="rightEyeLabel" destination="ggc-BH-wjl" id="Rmx-qS-7af"/>
+                        <outlet property="singleTapRecognizer" destination="FvC-4l-uGq" id="S7r-B3-mTP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="FvC-4l-uGq">
                     <connections>
-                        <action selector="tapAction:" destination="BYZ-38-t0r" id="ITB-ZZ-iHS"/>
+                        <action selector="singleTapAction:" destination="BYZ-38-t0r" id="Ihn-un-tvj"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="ZgY-Gz-rIK">
+                    <connections>
+                        <action selector="doubleTapAction:" destination="BYZ-38-t0r" id="hSk-KM-YaX"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer numberOfTouchesRequired="2" id="1Y9-5o-aGa">
                     <connections>
-                        <action selector="doubleTapAction:" destination="BYZ-38-t0r" id="rlO-dh-h8T"/>
+                        <action selector="twoFingerTapAction:" destination="BYZ-38-t0r" id="s1s-YV-ca9"/>
                     </connections>
                 </tapGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Rzx-0a-8Ur">
