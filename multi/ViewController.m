@@ -67,9 +67,6 @@
     rightEyeLabel.font = multiFont;
     mouthLabel.font = multiFont;
     
-    CGFloat w = self.view.bounds.size.width;
-    CGFloat lineWidth = 50;
-    
     // Get the main bundle for the app
     CFBundleRef mainBundle = CFBundleGetMainBundle ();
     // Get the URL to the sound file to play.
@@ -77,11 +74,6 @@
     CFURLRef soundFileURLRef = CFBundleCopyResourceURL(mainBundle, CFSTR ("BD"), CFSTR ("wav"), NULL);
     // Create a system sound object representing the sound file
     AudioServicesCreateSystemSoundID(soundFileURLRef, &soundFileObject);
-    
-    lineView = [[UIView alloc] initWithFrame:CGRectMake(w-lineWidth, 0, lineWidth, 2)];
-    lineView.backgroundColor = [UIColor blackColor];
-    lineView.hidden = YES;
-    [self.view addSubview:lineView];
     
     [singleTapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
     [singleTapRecognizer requireGestureRecognizerToFail:longPressRecognizer];
@@ -288,10 +280,6 @@ NSData* screenToPNG()
         
         float incrementSize = 1000.f;
         CGPoint translation = [sender translationInView:self.view];
-        CGPoint location = [sender locationInView:self.view];
-        CGRect frame = lineView.frame;
-        frame.origin = CGPointMake(lineView.frame.origin.x, location.y);
-        lineView.frame = frame;
         hz -= (translation.y / incrementSize);
         if(hz < 0.1f)
             hz = 0.1f;
