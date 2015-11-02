@@ -33,7 +33,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // instance variables
-    //multiFont = [UIFont fontWithName:@"Menlo-Bold" size:48];
     hz = 10;
     period = 1.0/hz;
     
@@ -214,9 +213,9 @@ NSData* screenToPNG()
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//
-// GESTURE RECGONIZER STUFF
-//
+// ------------------------------------------------------
+// GESTURE RECOGNIZER STUFF
+// ------------------------------------------------------
 
 // make sure that the longLongPress is recognized after the longPress
 - (BOOL) gestureRecognizer:(UIGestureRecognizer *)longPressRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)longLongPressRecognizer {
@@ -252,7 +251,6 @@ NSData* screenToPNG()
     if(!paused)
         [self killTimer];
     
-    // [self takeScreenshot];
     [self sendMessage];
 }
 
@@ -266,7 +264,6 @@ NSData* screenToPNG()
         if(!paused)
             [self killTimer];
         [self takeScreenshot];
-        // [self sendMessage];
     }
 }
 
@@ -310,8 +307,7 @@ NSData* screenToPNG()
         // pause
         if(!paused)
             [self killTimer];
-        
-        // [self takeScreenshot];
+
         [self sendMessage];
     }
 }
