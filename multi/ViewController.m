@@ -24,6 +24,8 @@
 @synthesize soundFileObject;
 @synthesize singleTapRecognizer;
 @synthesize doubleTapRecognizer;
+@synthesize longPressRecognizer;
+@synthesize longLongPressRecognizer;
 
 - (void)viewDidLoad
 {
@@ -31,7 +33,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // instance variables
-    multiFont = [UIFont fontWithName:@"Wattis-Regular" size:48];
+    //multiFont = [UIFont fontWithName:@"Menlo-Bold" size:48];
     hz = 10;
     period = 1.0/hz;
     
@@ -40,10 +42,31 @@
     mouth = [NSArray arrayWithObjects: @"o", @"+", @"-", @"+", @"–", @"/", @"x", @"=", @"~", @"_", @"-", @"_", @"*", nil];
     hzLabel.text = [NSString stringWithFormat: @"%1.2f Hz", hz];
     
+    // set font size based on screen size
+    CGFloat fontSize = 20;
+    // iphone 4
+    if(self.view.bounds.size.height <= 480)
+        fontSize = 100;
+    // iphone 5
+    else if(self.view.bounds.size.height <= 568)
+        fontSize = 110;
+    // iphone 6
+    else if(self.view.bounds.size.height <= 667)
+        fontSize = 120;
+    // iphone 6+
+    else if(self.view.bounds.size.height <= 736)
+        fontSize = 130;
+    // ipad
+    else
+        fontSize = 200;
+    
+    multiFont = [UIFont fontWithName:@"Menlo-Bold" size:fontSize];
+    
     // set fonts
     leftEyeLabel.font = multiFont;
     rightEyeLabel.font = multiFont;
     mouthLabel.font = multiFont;
+    
     CGFloat w = self.view.bounds.size.width;
     CGFloat lineWidth = 50;
     
@@ -61,6 +84,9 @@
     [self.view addSubview:lineView];
     
     [singleTapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
+    [singleTapRecognizer requireGestureRecognizerToFail:longPressRecognizer];
+    self.longPressRecognizer.delegate = self;
+    self.longLongPressRecognizer.delegate = self;
     
     [self initTimer];
 }
@@ -114,15 +140,7 @@
 - (void) takeScreenshot
 {
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    // take a screenshot
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
-        UIGraphicsBeginImageContextWithOptions(window.bounds.size, NO, [UIScreen mainScreen].scale);
-    else
-        UIGraphicsBeginImageContext(window.bounds.size);
-    
-    [window.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    NSData* imageData =  UIImagePNGRepresentation(image);
+    NSData* imageData = screenToPNG();
     UIImage* pngImage = [UIImage imageWithData:imageData];
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(pngImage, nil, nil, nil);
@@ -144,6 +162,73 @@
     
     // play camera sound
     AudioServicesPlaySystemSound(1108);
+}
+
+// send messages
+- (void) sendMessage
+{
+    MFMessageComposeViewController* composer = [[MFMessageComposeViewController alloc] init];
+    composer.messageComposeDelegate = self;
+    
+    if([MFMessageComposeViewController canSendText])
+    {
+        // These checks basically make sure it's an MMS capable device with iOS7
+        if([MFMessageComposeViewController respondsToSelector:@selector(canSendAttachments)] && [MFMessageComposeViewController canSendAttachments])
+        {
+            NSData* attachment = screenToPNG();
+            NSString* uti = (NSString*)kUTTypeMessage;
+            [composer addAttachmentData:attachment typeIdentifier:uti filename:@"multi.png"];
+        }
+        [self presentViewController:composer animated:YES completion:nil];
+    }
+}
+
+
+NSData* screenToPNG()
+{
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    // take a screenshot
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
+        UIGraphicsBeginImageContextWithOptions(window.bounds.size, NO, [UIScreen mainScreen].scale);
+    else
+        UIGraphicsBeginImageContext(window.bounds.size);
+    
+    [window.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    NSData* png =  UIImagePNGRepresentation(image);
+    
+    return png;
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    switch (result) {
+        case MessageComposeResultCancelled:
+        {
+        }
+            break;
+        case MessageComposeResultFailed:
+        {
+        }
+            break;
+        case MessageComposeResultSent:
+        {
+        }
+            break;
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//
+// GESTURE RECGONIZER STUFF
+//
+
+// make sure that the longLongPress is recognized after the longPress
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)longPressRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)longLongPressRecognizer {
+    return YES;
 }
 
 // ------------------------------------------------------
@@ -168,17 +253,18 @@
 }
 
 // action: tap with two fingers
-// result: take screenshot
+// result: send screen as message
 - (IBAction)twoFingerTapAction:(UITapGestureRecognizer *)sender
 {
     // pause
     if(!paused)
         [self killTimer];
     
-    [self takeScreenshot];
+    // [self takeScreenshot];
+    [self sendMessage];
 }
 
-// action: press and hold
+// action: tap for 0.5 seconds
 // resutl: take screenshots
 - (IBAction)longPressAction:(UILongPressGestureRecognizer *)sender
 {
@@ -188,6 +274,7 @@
         if(!paused)
             [self killTimer];
         [self takeScreenshot];
+        // [self sendMessage];
     }
 }
 
@@ -223,6 +310,21 @@
         
         if(sender.state == UIGestureRecognizerStateEnded)
             lineView.hidden = YES;
+    }
+}
+
+// action: press for 1.5 seconds
+// result: send screen as message
+- (IBAction)longlongPressAction:(UILongPressGestureRecognizer *)sender
+{
+    if(sender.state == UIGestureRecognizerStateBegan)
+    {
+        // pause
+        if(!paused)
+            [self killTimer];
+        
+        // [self takeScreenshot];
+        [self sendMessage];
     }
 }
 

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <MessageUI/MessageUI.h>
+#import <MobileCoreServices/UTCoreTypes.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate>
 {
     NSTimer *multiTimer;
     UIFont *multiFont;
@@ -28,12 +30,15 @@
 @property (strong, nonatomic) IBOutlet UILabel *hzLabel;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *singleTapRecognizer;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *doubleTapRecognizer;
+@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longPressRecognizer;
+@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longLongPressRecognizer;
 
 - (IBAction)singleTapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)twoFingerTapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)longPressAction:(UILongPressGestureRecognizer *)sender;
 - (IBAction)panAction:(UIPanGestureRecognizer *)sender;
+- (IBAction)longlongPressAction:(UILongPressGestureRecognizer *)sender;
 
 @end
 

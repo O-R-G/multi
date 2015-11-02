@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -31,9 +32,6 @@
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="110"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="160"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4c-va-3dC">
                                 <rect key="frame" x="40" y="128" width="260" height="145"/>
@@ -48,18 +46,12 @@
                                         <exclude reference="sKl-uE-krv"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="160"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="`" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggc-BH-wjl">
                                 <rect key="frame" x="300" y="128" width="260" height="145"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="110"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="160"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -104,6 +96,7 @@
                             <outletCollection property="gestureRecognizers" destination="1Y9-5o-aGa" appends="YES" id="yWX-yh-wAe"/>
                             <outletCollection property="gestureRecognizers" destination="md2-qr-nbQ" appends="YES" id="CyA-wX-kR2"/>
                             <outletCollection property="gestureRecognizers" destination="ZgY-Gz-rIK" appends="YES" id="aTH-FO-Fc5"/>
+                            <outletCollection property="gestureRecognizers" destination="Kch-3I-UdJ" appends="YES" id="pHE-ZV-To7"/>
                         </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -111,6 +104,8 @@
                         <outlet property="doubleTapRecognizer" destination="ZgY-Gz-rIK" id="YAI-OV-8yq"/>
                         <outlet property="hzLabel" destination="skQ-gD-rGv" id="Nyq-ej-wEB"/>
                         <outlet property="leftEyeLabel" destination="S4c-va-3dC" id="bId-mJ-5Gn"/>
+                        <outlet property="longLongPressRecognizer" destination="Kch-3I-UdJ" id="lva-si-iD1"/>
+                        <outlet property="longPressRecognizer" destination="md2-qr-nbQ" id="pGi-Gd-L4u"/>
                         <outlet property="mouthLabel" destination="L9U-WH-F3z" id="eK3-r3-AR0"/>
                         <outlet property="rightEyeLabel" destination="ggc-BH-wjl" id="Rmx-qS-7af"/>
                         <outlet property="singleTapRecognizer" destination="FvC-4l-uGq" id="S7r-B3-mTP"/>
@@ -140,6 +135,11 @@
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="md2-qr-nbQ">
                     <connections>
                         <action selector="longPressAction:" destination="BYZ-38-t0r" id="dcr-oJ-ZzH"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1.5" id="Kch-3I-UdJ">
+                    <connections>
+                        <action selector="longlongPressAction:" destination="BYZ-38-t0r" id="x3n-jZ-xgS"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
