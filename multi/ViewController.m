@@ -43,18 +43,21 @@
     
     // set font size based on screen size
     CGFloat fontSize = 20;
-    // iphone 4
+    // iphone 4,4s
     if(self.view.bounds.size.height <= 480)
         fontSize = 100;
-    // iphone 5
+    // iphone 5,5s,5c,SE
     else if(self.view.bounds.size.height <= 568)
         fontSize = 110;
-    // iphone 6
+    // iphone 6,7,8
     else if(self.view.bounds.size.height <= 667)
         fontSize = 120;
-    // iphone 6+
+    // iphone 6,7,8+
     else if(self.view.bounds.size.height <= 736)
         fontSize = 130;
+    // iphone x
+    else if(self.view.bounds.size.height <= 812)
+        fontSize = 120;
     // ipad
     else
         fontSize = 200;
