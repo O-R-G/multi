@@ -179,7 +179,6 @@
     }
 }
 
-
 NSData* screenToPNG()
 {
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];

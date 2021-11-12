@@ -37,6 +37,6 @@
     
     one-liner
 
-	> 
-xcodebuild -scheme multi -destination $DESTINATION build; xcrun simctl terminate $DEVICEID $BUNDLEID;xcrun simctl 
-install $DEVICEID $BUNDLEPATH; xcrun simctl launch $DEVICEID $BUNDLEID
+	> xcodebuild -scheme multi -destination $DESTINATION build; \
+    xcrun simctl terminate $DEVICEID $BUNDLEID;xcrun simctl install \
+    $DEVICEID $BUNDLEPATH; xcrun simctl launch $DEVICEID $BUNDLEID
