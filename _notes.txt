@@ -1,0 +1,42 @@
++ list schemes, targets
+
+	> xcodebuild -list -project multi.xcodeproj
+
++ set environment
+
+    * https://stackoverflow.com/questions/31179706/how-can-i-launch-the-ios-simulator-from-terminal
+
+    > xcrun simctl list
+    > DEVICEID=A736F7FD-1EC9-4EB3-9F88-33A12B76E96F
+
+    > DESTINATION='platform=iOS Simulator,name=iPhone 11,OS=15.0'
+
+    > BUNDLEPATH=/Users/reinfurt/Library/Developer/Xcode/DerivedData/\
+    multi-gewlnlwrghrquaaugzyvvcoompcu/Build/Products/Debug-iphonesimulator/multi.app
+
+    > mdls -name kMDItemCFBundleIdentifier -r $BUNDLE
+    > BUNDLEID=com.o-r-g.multi
+
++ set environment, start simulator 
+
+    > DEVICEID=A736F7FD-1EC9-4EB3-9F88-33A12B76E96F; 
+    > BUNDLEPATH=/Users/reinfurt/Library/Developer/Xcode/DerivedData/multi-gewlnlwrghrquaaugzyvvcoompcu/Build/Products/Debug-iphonesimulator/multi.app;
+    > BUNDLEID=com.o-r-g.multi;
+    > /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID $DEVICEID; 
+
++ build
+
+    > xcodebuild -scheme multi -destination $DESTINATION build
+
++ build, stop, install, run
+
+    > xcodebuild -scheme multi build
+    > xcrun simctl terminate $DEVICEID $BUNDLEID
+    > xcrun simctl install $DEVICEID $BUNDLEPATH
+    > xcrun simctl launch $DEVICEID $BUNDLEID
+    
+    one-liner
+
+	> 
+xcodebuild -scheme multi -destination $DESTINATION build; xcrun simctl terminate $DEVICEID $BUNDLEID;xcrun simctl 
+install $DEVICEID $BUNDLEPATH; xcrun simctl launch $DEVICEID $BUNDLEID
