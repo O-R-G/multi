@@ -1,0 +1,2 @@
+- fix dark mode appearance which makes face lose one eye (!)
+  https://developer.apple.com/documentation/uikit/appearance_customization/supporting_dark_mode_in_your_interface?language=objc
