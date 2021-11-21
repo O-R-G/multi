@@ -18,8 +18,12 @@
 
 @synthesize eye;
 @synthesize mouth;
-@synthesize LeftEyeLabel;
+@synthesize leftEyeLabel;
+@synthesize rightEyeLabel;
 @synthesize mouthLabel;
+@synthesize singleTapRecognizer;
+
+
 
 
 - (void)awakeWithContext:(id)context {
@@ -72,21 +76,33 @@
 {
     // AudioServicesPlaySystemSound (self.soundFileObject);
     // AudioServicesPlaySystemSound (1305);
-    int i = arc4random_uniform((int)eye.count);
-    LeftEyeLabel.text = eye[i];
     
-    /*
+    int i = arc4random_uniform((int)eye.count);
+    leftEyeLabel.text = eye[i];
+    
     i = arc4random_uniform((int)eye.count);
-    self.rightEyeLabel.text = eye[i];
-     */
+    rightEyeLabel.text = eye[i];
     
     i = arc4random_uniform((int)mouth.count);
     self.mouthLabel.text = mouth[i];
-
 }
 
 
 
+// ------------------------------------------------------
+// ACTIONS
+// ------------------------------------------------------
+
+// action: single tap
+// result: pause
+
+- (IBAction)singleTapAction:(id)sender {
+
+    if(paused)
+        [self initTimer];
+    else
+        [self killTimer];
+}
 @end
 
 

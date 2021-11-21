@@ -16,10 +16,15 @@
         float hz, period;
     }
 
-@property (strong, nonatomic) IBOutlet WKInterfaceLabel *LeftEyeLabel;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *leftEyeLabel;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *rightEyeLabel;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *mouthLabel;
+@property (strong, nonatomic) IBOutlet WKTapGestureRecognizer *singleTapRecognizer;
 
 @property (readonly) NSArray *eye;
 @property (readonly) NSArray *mouth;
+
+- (IBAction)singleTapAction:(id)sender;
+
 
 @end
