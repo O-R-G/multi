@@ -9,6 +9,17 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
-@interface InterfaceController : WKInterfaceController
+@interface InterfaceController : WKInterfaceController {
+        NSTimer *multiTimer;
+        // UIFont *multiFont;
+        BOOL paused;
+        float hz, period;
+    }
+
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *LeftEyeLabel;
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *mouthLabel;
+
+@property (readonly) NSArray *eye;
+@property (readonly) NSArray *mouth;
 
 @end

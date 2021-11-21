@@ -62,6 +62,9 @@ Adding a watch app (independent) to existing ios app using objective-c and story
 
 + share files / assets with watch target
 
+  ** largely unnecessary as many things specific to phone, need to rebuild interface for watch **
+  
++ copy code from ViewController to InterfaceController
 
 
 

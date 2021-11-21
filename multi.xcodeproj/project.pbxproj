@@ -28,6 +28,7 @@
 		93C77274274A9526005EFDEC /* watchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C77273274A9526005EFDEC /* watchUITests.m */; };
 		93C77276274A9526005EFDEC /* watchUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C77275274A9526005EFDEC /* watchUITestsLaunchTests.m */; };
 		93C77279274A9526005EFDEC /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 93C77241274A9522005EFDEC /* watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93C7728A274AA67E005EFDEC /* Wattis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -498,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93C7725E274A9526005EFDEC /* Assets.xcassets in Resources */,
+				93C7728A274AA67E005EFDEC /* Wattis-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
