@@ -66,6 +66,12 @@ Adding a watch app (independent) to existing ios app using objective-c and story
   
 + copy code from ViewController to InterfaceController
 
++ deploy to apple watch (confirm watch in xcode as valid device, provisioned, etc)
+
+--
+
+
+
 
 
 
