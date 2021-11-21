@@ -32,17 +32,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self initIosWatch];
+}
+
+- (void)initIosWatch
+{
+    
     // instance variables
     hz = 10;
     period = 1.0/hz;
-    
+
     // properties
     eye = [NSArray arrayWithObjects: @",", @".", @"*", @"+", @"-", @"—", @":", @";", @"•", @"°", @"‘", @"’", nil];
     // mouth = [NSArray arrayWithObjects: @"o", @"+", @"-", @"+", @"–", @"/", @"x", @"=", @"~", @"_", @"-", @"_", @"*", nil];
     mouth = [NSArray arrayWithObjects: @"o", @"+", @"-", @"+", @"–", @"/", @"∘", @"=", @"~", @".", @"-", @"×", @"*", nil];
 
     hzLabel.text = [NSString stringWithFormat: @"%1.2f Hz", hz];
-    
+
     // set font size based on screen size
     CGFloat fontSize = 20;
     // iphone 4,4s
@@ -63,14 +69,14 @@
     // ipad
     else
         fontSize = 200;
-    
+
     multiFont = [UIFont fontWithName:@"Menlo-Bold" size:fontSize];
-    
+
     // set fonts
     leftEyeLabel.font = multiFont;
     rightEyeLabel.font = multiFont;
     mouthLabel.font = multiFont;
-    
+
     // Get the main bundle for the app
     CFBundleRef mainBundle = CFBundleGetMainBundle ();
     // Get the URL to the sound file to play.
@@ -78,12 +84,12 @@
     CFURLRef soundFileURLRef = CFBundleCopyResourceURL(mainBundle, CFSTR ("BD"), CFSTR ("wav"), NULL);
     // Create a system sound object representing the sound file
     AudioServicesCreateSystemSoundID(soundFileURLRef, &soundFileObject);
-    
+
     [singleTapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
     [singleTapRecognizer requireGestureRecognizerToFail:longPressRecognizer];
     self.longPressRecognizer.delegate = self;
     self.longLongPressRecognizer.delegate = self;
-    
+
     [self initTimer];
 }
 
