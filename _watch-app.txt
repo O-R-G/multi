@@ -54,10 +54,6 @@ Adding a watch app (independent) to existing ios app using objective-c and story
 
   + In the Deployment Info section, select the Supports Running Without iOS App Installation.
 
-+ remove storyboard for watch app, start fresh
-
-	* https://www.raywenderlich.com/287-watchos-4-tutorial-part-1-getting-started
-
 + add icons (work from existing ios icons but need more sizes also)
 
 + share files / assets with watch target
