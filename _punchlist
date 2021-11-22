@@ -1,4 +1,7 @@
 x fix dark mode appearance which makes face lose one eye (!)
   https://developer.apple.com/documentation/uikit/appearance_customization/supporting_dark_mode_in_your_interface?language=objc
   fixed by making all type black instead of 'custom color'
-
+- watch add menlo font?
+- watch add intro screen with screenshot instructions
+- watch research status bar visibility
+- watch adjust speed (using period var)
