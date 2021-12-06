@@ -6,3 +6,4 @@ x fix dark mode appearance which makes face lose one eye (!)
 - watch research status bar visibility
 - watch adjust speed (using period var)
 - add audio asset, play bd
+- change bundle id from com.o-r-g.multi.watch (?) to ...
