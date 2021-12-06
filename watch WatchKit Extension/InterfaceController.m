@@ -24,8 +24,6 @@
 @synthesize singleTapRecognizer;
 
 
-
-
 - (void)awakeWithContext:(id)context {
     // Configure interface objects here.
     [self initWatchOS];
@@ -42,6 +40,11 @@
 
 - (void)initWatchOS
 {
+
+    // instance variables
+    hz = 10;
+    period = 1.0/hz;
+
     // properties
     eye = [NSArray arrayWithObjects: @",", @".", @"*", @"+", @"-", @"—", @":", @";", @"•", @"°", @"‘", @"’", nil];
     mouth = [NSArray arrayWithObjects: @"o", @"+", @"-", @"+", @"–", @"/", @"∘", @"=", @"~", @".", @"-", @"×", @"*", nil];
