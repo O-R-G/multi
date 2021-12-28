@@ -11,6 +11,8 @@
 
 @interface InterfaceController ()
 
+@property (nonatomic) int num;
+
 @end
 
 
@@ -27,6 +29,10 @@
 - (void)awakeWithContext:(id)context {
     // Configure interface objects here.
     [self initWatchOS];
+
+    WKCrownSequencer *sequencer = self.crownSequencer;
+    [sequencer focus];
+    sequencer.delegate = self;
 }
 
 - (void)willActivate {
@@ -105,6 +111,33 @@
     else
         [self killTimer];
 }
+
+- (void) crownDidRotate:(WKCrownSequencer *)crownSequencer rotationalDelta:(double)rotationalDelta {
+
+    // surely an easier way to do this with % 
+
+    if (rotationalDelta > 0) _num++;
+    if (rotationalDelta < 0) _num--;
+    if (_num == 45) _num = 1;
+    if (_num == 0) _num = 44;
+
+    // ** not working **
+    // hz = _num / 4;
+    hz = .25;
+
+    // ** for debug **
+    NSString *name = [NSString stringWithFormat:@"%d", _num];
+    // self.mouthLabel.text = @"T";;
+    self.mouthLabel.text = name;
+        
+    [self killTimer];
+    // [self initTimer];
+
+    // NSString *name = [NSString stringWithFormat:@"sushi_%d", _num];
+    // [_sushiImage setImageNamed:name];
+    // [_messageLabel setText:@"おすしぐるぐる"];
+}
+
 @end
 
 
