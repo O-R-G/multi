@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19455" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch40"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19514"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Wattis-Regular.ttf">
+            <string>Wattis-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -13,17 +18,17 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="overlap" id="Lqj-9j-mn0">
                             <items>
-                                <label alignment="left" text="*" textAlignment="center" id="7PT-k2-bpu">
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="72"/>
-                                </label>
                                 <label alignment="right" text="*" textAlignment="center" id="b2j-aF-zUr">
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="72"/>
+                                    <fontDescription key="font" name="Wattis-Regular" family="Wattis" pointSize="72"/>
                                 </label>
                                 <label alignment="center" verticalAlignment="bottom" text="*" textAlignment="center" id="yu0-XH-mAD">
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" type="system" pointSize="72"/>
+                                    <fontDescription key="font" name="Wattis-Regular" family="Wattis" pointSize="72"/>
+                                </label>
+                                <label alignment="left" text="*" textAlignment="center" id="7PT-k2-bpu">
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" name="Wattis-Regular" family="Wattis" pointSize="72"/>
                                 </label>
                             </items>
                             <gestureRecognizers>
@@ -33,7 +38,7 @@
                                     </connections>
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
-                            <edgeInsets key="margins" left="20" right="20" top="0.0" bottom="0.0"/>
+                            <edgeInsets key="margins" left="20" right="20" top="10" bottom="0.0"/>
                         </group>
                     </items>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

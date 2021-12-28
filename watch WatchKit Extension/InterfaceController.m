@@ -42,8 +42,7 @@
     // This method is called when watch view controller is no longer visible
 }
 
-- (void)initWatchOS
-{
+- (void)initWatchOS {
 
     // instance variables
     hz = 10;
@@ -55,8 +54,8 @@
     [self initTimer];
 }
 
-- (void) initTimer
-{
+- (void) initTimer {
+
     period = 1.0/hz;
     multiTimer = [NSTimer
                   scheduledTimerWithTimeInterval:period
@@ -72,15 +71,15 @@
     paused = false;
 }
 
-- (void) killTimer
-{
+- (void) killTimer {
+
     [multiTimer invalidate];
     multiTimer = nil;
     paused = true;
 }
 
-- (void) multiTimerCallBack
-{
+- (void) multiTimerCallBack {
+
     // AudioServicesPlaySystemSound (self.soundFileObject);
     // AudioServicesPlaySystemSound (1305);
     
@@ -120,7 +119,7 @@
     if (rotationalDelta > 0 && _hz_delta < 50) _hz_delta++;
     if (rotationalDelta < 0 && _hz_delta > 1) _hz_delta--;
 
-    hz = _hz_delta; // watch out for divide by zero
+    hz = _hz_delta; // adjust to map onto hz range, refer to ios app
 
     // ** for debug **
     NSString *name = [NSString stringWithFormat:@"%d", _hz_delta];
@@ -139,6 +138,3 @@
 }
 
 @end
-
-
-

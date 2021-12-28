@@ -16,6 +16,7 @@
 		2A373EE51B7AB25D004CFD99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A373EE41B7AB25D004CFD99 /* Images.xcassets */; };
 		2A373EE81B7AB25D004CFD99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A373EE61B7AB25D004CFD99 /* LaunchScreen.xib */; };
 		2A373EF41B7AB25D004CFD99 /* multiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EF31B7AB25D004CFD99 /* multiTests.m */; };
+		93AD5A17277BC5030010AE42 /* Wattis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */; };
 		93C77245274A9522005EFDEC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C77243274A9522005EFDEC /* Interface.storyboard */; };
 		93C77247274A9524005EFDEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C77246274A9524005EFDEC /* Assets.xcassets */; };
 		93C7724D274A9524005EFDEC /* watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 93C7724C274A9524005EFDEC /* watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -489,6 +490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93AD5A17277BC5030010AE42 /* Wattis-Regular.ttf in Resources */,
 				93C77247274A9524005EFDEC /* Assets.xcassets in Resources */,
 				93C77245274A9522005EFDEC /* Interface.storyboard in Resources */,
 			);
