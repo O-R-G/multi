@@ -125,13 +125,17 @@
     // ** for debug **
     NSString *name = [NSString stringWithFormat:@"%d", _hz_delta];
     self.mouthLabel.text = name;
-      
-    [self killTimer];
-    [self initTimer];
+    
+    if(paused)
+        [self killTimer];
+    else {
+        [self killTimer];
+        [self initTimer];
+    }
 }
 
 - (void) crownDidBecomeIdle:(WKCrownSequencer *)crownSequencer {
-    // nothing for the moment
+    // nothing for now
 }
 
 @end
