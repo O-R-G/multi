@@ -11,8 +11,6 @@
 
 @interface InterfaceController ()
 
-@property (nonatomic) int num;
-
 @end
 
 
@@ -49,7 +47,6 @@
 
     // instance variables
     hz = 10;
-    period = 1.0/hz;
 
     // properties
     eye = [NSArray arrayWithObjects: @",", @".", @"*", @"+", @"-", @"—", @":", @";", @"•", @"°", @"‘", @"’", nil];
@@ -60,6 +57,7 @@
 
 - (void) initTimer
 {
+    period = 1.0/hz;
     multiTimer = [NSTimer
                   scheduledTimerWithTimeInterval:period
                   target:self
@@ -112,30 +110,28 @@
         [self killTimer];
 }
 
+// action: rotate digital crown
+// result: adjust display speed
+
 - (void) crownDidRotate:(WKCrownSequencer *)crownSequencer rotationalDelta:(double)rotationalDelta {
 
     // surely an easier way to do this with % 
 
-    if (rotationalDelta > 0) _num++;
-    if (rotationalDelta < 0) _num--;
-    if (_num == 45) _num = 1;
-    if (_num == 0) _num = 44;
+    if (rotationalDelta > 0 && _hz_delta < 50) _hz_delta++;
+    if (rotationalDelta < 0 && _hz_delta > 1) _hz_delta--;
 
-    // ** not working **
-    // hz = _num / 4;
-    hz = .25;
+    hz = _hz_delta; // watch out for divide by zero
 
     // ** for debug **
-    NSString *name = [NSString stringWithFormat:@"%d", _num];
-    // self.mouthLabel.text = @"T";;
+    NSString *name = [NSString stringWithFormat:@"%d", _hz_delta];
     self.mouthLabel.text = name;
-        
+      
     [self killTimer];
-    // [self initTimer];
+    [self initTimer];
+}
 
-    // NSString *name = [NSString stringWithFormat:@"sushi_%d", _num];
-    // [_sushiImage setImageNamed:name];
-    // [_messageLabel setText:@"おすしぐるぐる"];
+- (void) crownDidBecomeIdle:(WKCrownSequencer *)crownSequencer {
+    // nothing for the moment
 }
 
 @end
