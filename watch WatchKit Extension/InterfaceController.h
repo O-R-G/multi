@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *rightEyeLabel;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *mouthLabel;
 @property (strong, nonatomic) IBOutlet WKTapGestureRecognizer *singleTapRecognizer;
+@property (strong, nonatomic) IBOutlet WKInterfaceSlider *hzSlider;
 
 @property (readonly) NSArray *eye;
 @property (readonly) NSArray *mouth;

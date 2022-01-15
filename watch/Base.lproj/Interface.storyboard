@@ -30,6 +30,7 @@
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" name="Wattis-Regular" family="Wattis" pointSize="72"/>
                                 </label>
+                                <slider width="1" alignment="center" verticalAlignment="center" hidden="YES" continuous="YES" value="1" maximum="50" steps="3" minimumImage="minus" catalog="system" maximumImage="plus" id="WLL-FO-PpJ"/>
                             </items>
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="cDK-1R-dT5">
@@ -38,11 +39,13 @@
                                     </connections>
                                 </tapGestureRecognizer>
                             </gestureRecognizers>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <edgeInsets key="margins" left="20" right="20" top="10" bottom="0.0"/>
                         </group>
                     </items>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
+                        <outlet property="hzSlider" destination="WLL-FO-PpJ" id="zWt-st-zec"/>
                         <outlet property="leftEyeLabel" destination="7PT-k2-bpu" id="Fgc-6S-xEy"/>
                         <outlet property="mouthLabel" destination="yu0-XH-mAD" id="b3D-Sh-3I7"/>
                         <outlet property="rightEyeLabel" destination="b2j-aF-zUr" id="3pB-UA-fHM"/>
@@ -84,4 +87,8 @@
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="112"/>
+    </resources>
 </document>

@@ -21,6 +21,7 @@
 @synthesize leftEyeLabel;
 @synthesize rightEyeLabel;
 @synthesize mouthLabel;
+@synthesize hzSlider;
 @synthesize singleTapRecognizer;
 
 
@@ -122,8 +123,13 @@
     hz = _hz_delta; // adjust to map onto hz range, refer to ios app
 
     // ** for debug **
-    NSString *name = [NSString stringWithFormat:@"%d", _hz_delta];
-    self.mouthLabel.text = name;
+    // NSString *name = [NSString stringWithFormat:@"%d", _hz_delta];
+    // self.mouthLabel.text = name;
+    
+    // make hzSlider visible, update value
+    
+    [hzSlider setHidden:0];
+    [hzSlider setValue:hz];
     
     if(paused)
         [self killTimer];
@@ -135,6 +141,7 @@
 
 - (void) crownDidBecomeIdle:(WKCrownSequencer *)crownSequencer {
     // nothing for now
+    [hzSlider setHidden:1];
 }
 
 @end
