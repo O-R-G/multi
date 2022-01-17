@@ -30,12 +30,20 @@
     // Configure interface objects here.
     [self initWatchOS];
 
-    WKCrownSequencer *sequencer = self.crownSequencer;
-    [sequencer focus];
-    sequencer.delegate = self;
+    // would be better to use a proper delegate hmm ...
+    // WKCrownSequencer *sequencer = self.crownSequencer;
+    // [sequencer focus];
+    // [sequencer isHapticFeedbackEnabled: TRUE];
+    // sequencer.delegate = self;
+    // https://stackoverflow.com/questions/9861538/assigning-to-iddelegate-from-incompatible-type-viewcontroller-const-strong
+    // need to declare delegate in .h
+    
+    self.crownSequencer.delegate = self;
 }
 
 - (void)willActivate {
+    [self.crownSequencer focus];
+
     // This method is called when
     // watch view controller is about to be visible to user
 }
@@ -128,16 +136,9 @@
     // self.mouthLabel.text = name;
     
     // make hzSlider visible, update value
-    
     [hzSlider setHidden:0];
     [hzSlider setValue:hz];
-    
     [group setBackgroundColor:[UIColor darkGrayColor]];
-    /*
-     [rightEyeLabel setTextColor:[UIColor darkGrayColor]];
-    [leftEyeLabel setTextColor:[UIColor darkGrayColor]];
-    [mouthLabel setTextColor:[UIColor darkGrayColor]];
-    */
     
     if(paused)
         [self killTimer];
@@ -152,14 +153,6 @@
     [NSThread sleepForTimeInterval:0.1f];
     [hzSlider setHidden:1];
     [group setBackgroundColor:[UIColor whiteColor]];
-    /*
-    [rightEyeLabel setTextColor:[UIColor blackColor]];
-    [leftEyeLabel setTextColor:[UIColor blackColor]];
-    [mouthLabel setTextColor:[UIColor blackColor]];
-     */
-    
-    // if(paused)
-    //    [self initTimer];
 }
 
 @end
