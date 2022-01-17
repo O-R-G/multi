@@ -16,6 +16,7 @@
 
 @implementation InterfaceController
 
+@synthesize group;
 @synthesize eye;
 @synthesize mouth;
 @synthesize leftEyeLabel;
@@ -131,6 +132,13 @@
     [hzSlider setHidden:0];
     [hzSlider setValue:hz];
     
+    [group setBackgroundColor:[UIColor darkGrayColor]];
+    /*
+     [rightEyeLabel setTextColor:[UIColor darkGrayColor]];
+    [leftEyeLabel setTextColor:[UIColor darkGrayColor]];
+    [mouthLabel setTextColor:[UIColor darkGrayColor]];
+    */
+    
     if(paused)
         [self killTimer];
     else {
@@ -141,7 +149,17 @@
 
 - (void) crownDidBecomeIdle:(WKCrownSequencer *)crownSequencer {
     // nothing for now
+    [NSThread sleepForTimeInterval:0.5f];
     [hzSlider setHidden:1];
+    [group setBackgroundColor:[UIColor whiteColor]];
+    /*
+    [rightEyeLabel setTextColor:[UIColor blackColor]];
+    [leftEyeLabel setTextColor:[UIColor blackColor]];
+    [mouthLabel setTextColor:[UIColor blackColor]];
+     */
+    
+    // if(paused)
+    //    [self initTimer];
 }
 
 @end

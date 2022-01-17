@@ -16,6 +16,7 @@
         float hz, period;
     }
 
+@property (strong, nonatomic) IBOutlet WKInterfaceGroup *group;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *leftEyeLabel;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *rightEyeLabel;
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *mouthLabel;
