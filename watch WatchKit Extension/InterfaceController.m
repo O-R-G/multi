@@ -149,7 +149,7 @@
 
 - (void) crownDidBecomeIdle:(WKCrownSequencer *)crownSequencer {
     // nothing for now
-    [NSThread sleepForTimeInterval:0.5f];
+    [NSThread sleepForTimeInterval:0.1f];
     [hzSlider setHidden:1];
     [group setBackgroundColor:[UIColor whiteColor]];
     /*

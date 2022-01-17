@@ -3,10 +3,11 @@ x fix dark mode appearance which makes face lose one eye (!)
   fixed by making all type black instead of 'custom color'
 + watch add wattis font?
 x watch add intro screen with screenshot instructions
-/ watch research status bar visibility
 + watch adjust speed (using period var)
+x watch add audio asset, play bd
++ change bundle id from com.o-r-g.multi.watch (?) to ...
+/ watch research status bar visibility
 / watch hz label, interface, etc
-- watch add audio asset, play bd
-- change bundle id from com.o-r-g.multi.watch (?) to ...
+  map hz to correct range
 - watch screenshot
 - watch send message

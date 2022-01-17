@@ -30,7 +30,7 @@
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" name="Wattis-Regular" family="Wattis" pointSize="72"/>
                                 </label>
-                                <slider width="136" alignment="center" verticalAlignment="center" continuous="YES" value="1" maximum="50" steps="3" minimumImage="minus" catalog="system" maximumImage="plus" id="WLL-FO-PpJ"/>
+                                <slider width="136" alignment="center" verticalAlignment="center" hidden="YES" continuous="YES" value="1" maximum="50" steps="3" minimumImage="minus" catalog="system" maximumImage="plus" id="WLL-FO-PpJ"/>
                             </items>
                             <gestureRecognizers>
                                 <tapGestureRecognizer id="cDK-1R-dT5">
