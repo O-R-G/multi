@@ -37,7 +37,6 @@
     // sequencer.delegate = self;
     // https://stackoverflow.com/questions/9861538/assigning-to-iddelegate-from-incompatible-type-viewcontroller-const-strong
     // need to declare delegate in .h
-    
     self.crownSequencer.delegate = self;
 }
 
@@ -121,6 +120,9 @@
 
 // action: rotate digital crown
 // result: adjust display speed
+
+// this should be done with a delegate see
+// https://dev.to/no2s14/how-to-use-wkcrowndelegate-in-watchos-development-1lj9
 
 - (void) crownDidRotate:(WKCrownSequencer *)crownSequencer rotationalDelta:(double)rotationalDelta {
 

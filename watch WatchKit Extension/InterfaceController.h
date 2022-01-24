@@ -9,7 +9,9 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
-@interface InterfaceController : WKInterfaceController {
+// WKCrownDelegate
+
+@interface InterfaceController : WKInterfaceController <WKCrownDelegate> {
         NSTimer *multiTimer;
         // UIFont *multiFont;
         BOOL paused;
