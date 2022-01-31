@@ -25,14 +25,14 @@
   watch
 
     > SCHEME=watch
-    > DEVICEID=4F1508F6-4AB3-4FF1-8B03-5B07866C71C5
+    > DEVICEID=EF4AF95D-CC52-42EF-9F2F-B74DAD317DDE
     > DESTINATION='platform=watchsimulator,name=Apple Watch Series 7 - 45mm,OS=8.3'
     > BUNDLEPATH=/Users/reinfurt/Library/Developer/Xcode/DerivedData/multi-gewlnlwrghrquaaugzyvvcoompcu/Build/Products/Debug-watchsimulator/Multi.app
     > BUNDLEID=com.o-r-g.multi.watchkitapp
 
 + start simulator 
 
-    > /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID $DEVICEID; 
+    > /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID $DEVICEID;
 
 + build
 
@@ -47,4 +47,4 @@
     
     one-liner
 
-	> xcodebuild -scheme $SCHEME -destination $DESTINATION build; xcrun simctl terminate $DEVICEID $BUNDLEID;xcrun simctl install $DEVICEID $BUNDLEPATH; xcrun simctl launch $DEVICEID $BUNDLEID
+	> xcodebuild -scheme $SCHEME -destination $DESTINATION build; xcrun simctl terminate $DEVICEID $BUNDLEID; xcrun simctl install $DEVICEID $BUNDLEPATH; xcrun simctl launch $DEVICEID $BUNDLEID
