@@ -26,7 +26,7 @@
 
     > SCHEME=watch
     > DEVICEID=4F1508F6-4AB3-4FF1-8B03-5B07866C71C5
-    > DESTINATION='platform=watchOS Simulator,name=Apple Watch Series 5 - 40mm,OS=8.3'
+    > DESTINATION='platform=watchsimulator,name=Apple Watch Series 7 - 45mm,OS=8.3'
     > BUNDLEPATH=/Users/reinfurt/Library/Developer/Xcode/DerivedData/multi-gewlnlwrghrquaaugzyvvcoompcu/Build/Products/Debug-watchsimulator/Multi.app
     > BUNDLEID=com.o-r-g.multi.watchkitapp
 
