@@ -112,10 +112,13 @@
 
 - (IBAction)singleTapAction:(id)sender {
 
-    if(paused)
+    if(paused) {
         [self initTimer];
-    else
+        [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeStart];
+    } else {
         [self killTimer];
+        [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeStart];
+    }
 }
 
 // action: rotate digital crown
