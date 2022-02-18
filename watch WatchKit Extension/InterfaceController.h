@@ -28,7 +28,7 @@
 @property (readonly) NSArray *eye;
 @property (readonly) NSArray *mouth;
 
-@property (nonatomic) int hz_delta;
+@property (nonatomic) int hz_slider;
 
 - (IBAction)singleTapAction:(id)sender;
 

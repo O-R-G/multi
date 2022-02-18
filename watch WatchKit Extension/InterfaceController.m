@@ -30,13 +30,6 @@
     // Configure interface objects here.
     [self initWatchOS];
 
-    // would be better to use a proper delegate hmm ...
-    // WKCrownSequencer *sequencer = self.crownSequencer;
-    // [sequencer focus];
-    // [sequencer isHapticFeedbackEnabled: TRUE];
-    // sequencer.delegate = self;
-    // https://stackoverflow.com/questions/9861538/assigning-to-iddelegate-from-incompatible-type-viewcontroller-const-strong
-    // need to declare delegate in .h
     self.crownSequencer.delegate = self;
 }
 
@@ -54,12 +47,15 @@
 - (void)initWatchOS {
 
     // instance variables
-    hz = 10;
+    hz = 15;
 
     // properties
     eye = [NSArray arrayWithObjects: @",", @".", @"*", @"+", @"-", @"—", @":", @";", @"•", @"°", @"‘", @"’", nil];
     mouth = [NSArray arrayWithObjects: @"o", @"+", @"-", @"+", @"–", @"/", @"∘", @"=", @"~", @".", @"-", @"×", @"*", nil];
     
+    _hz_slider = 25;
+    [hzSlider setValue:_hz_slider];
+
     [self initTimer];
 }
 
@@ -73,10 +69,7 @@
                   userInfo:nil
                   repeats:YES
                   ];
-    [[NSRunLoop currentRunLoop]
-     addTimer:multiTimer
-     forMode:NSDefaultRunLoopMode
-     ];
+    [[NSRunLoop currentRunLoop] addTimer:multiTimer forMode:NSDefaultRunLoopMode];
     paused = false;
 }
 
@@ -91,7 +84,7 @@
 
     // AudioServicesPlaySystemSound (self.soundFileObject);
     // AudioServicesPlaySystemSound (1305);
-    
+
     int i = arc4random_uniform((int)eye.count);
     leftEyeLabel.text = eye[i];
     
@@ -113,11 +106,11 @@
 - (IBAction)singleTapAction:(id)sender {
 
     if(paused) {
+        [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeStart];
         [self initTimer];
-        [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeStart];
     } else {
-        [self killTimer];
         [[WKInterfaceDevice currentDevice] playHaptic:WKHapticTypeStart];
+        [self killTimer];
     }
 }
 
@@ -129,21 +122,31 @@
 
 - (void) crownDidRotate:(WKCrownSequencer *)crownSequencer rotationalDelta:(double)rotationalDelta {
 
-    // surely an easier way to do this with % 
+   /*
+        update dtheta (used to calculate mHz)
+        dtheta is the time delta between updates:
 
-    if (rotationalDelta > 0 && _hz_delta < 50) _hz_delta++;
-    if (rotationalDelta < 0 && _hz_delta > 1) _hz_delta--;
+        7 segments per digit and 6 digits
+        so to draw all digits is 42 updates
+        1.0 hz = 1 cycle / second = 1.0 / 42 = 0.0238
 
-    hz = _hz_delta; // adjust to map onto hz range, refer to ios app
+        desired range is 0.25 hz - 2.0 hz
 
-    // ** for debug **
-    // NSString *name = [NSString stringWithFormat:@"%d", _hz_delta];
-    // self.mouthLabel.text = name;
+            0.1 f < hz < 30.0f      (default = 15.0f)
+
+        _hz_slider is used to update slider in range:
+
+            0 < _hz_slider < 50
+    */
+
+    if (rotationalDelta > 0 && _hz_slider < 50) _hz_slider++;
+    if (rotationalDelta < 0 && _hz_slider > 1) _hz_slider--;
+
+    hz = 0.1f + (30.0f - 0.1f) * (_hz_slider - 0) / (50 - 0);
     
-    // make hzSlider visible, update value
-    [hzSlider setHidden:0];
-    [hzSlider setValue:hz];
     [group setBackgroundColor:[UIColor darkGrayColor]];
+    [hzSlider setHidden:0];
+    [hzSlider setValue:_hz_slider];
     
     if(paused)
         [self killTimer];

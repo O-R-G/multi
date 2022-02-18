@@ -8,7 +8,11 @@
 
   get device list
 
-    > xcrun simctl list
+    > xcrun simctl list devices available
+
+  get destination list
+
+    > xcodebuild -scheme $SCHEME -showdestinations
 
   get bundleid (run after set $BUNDLEPATH)
 
@@ -27,8 +31,15 @@
     > SCHEME=watch
     > DEVICEID=EF4AF95D-CC52-42EF-9F2F-B74DAD317DDE
     > DESTINATION='platform=watchsimulator,name=Apple Watch Series 7 - 45mm,OS=8.3'
+        or
+    > DESTINATION='platform=iOS,name=monsty'
+
     > BUNDLEPATH=/Users/reinfurt/Library/Developer/Xcode/DerivedData/multi-gewlnlwrghrquaaugzyvvcoompcu/Build/Products/Debug-watchsimulator/Multi.app
     > BUNDLEID=com.o-r-g.multi.watchkitapp
+
+
+{ platform:iOS, id:00008020-0005153C0E62002E, name:monsty, error:monsty does not have a paired Apple Watch on which to run apps.  }
+
 
 + start simulator 
 
