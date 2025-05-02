@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264035122DC4A68900B1FAF3 /* jingle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264035112DC4A68900B1FAF3 /* jingle.mp3 */; };
+		264035132DC4A68900B1FAF3 /* jingle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264035112DC4A68900B1FAF3 /* jingle.mp3 */; };
+		264035162DC4A71800B1FAF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264035152DC4A71800B1FAF3 /* AVFoundation.framework */; };
 		2A189E291B9F5BFB008D605C /* BD.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A189E281B9F5BFB008D605C /* BD.wav */; };
 		2A373EDA1B7AB25D004CFD99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373ED91B7AB25D004CFD99 /* main.m */; };
 		2A373EDD1B7AB25D004CFD99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EDC1B7AB25D004CFD99 /* AppDelegate.m */; };
@@ -97,6 +100,8 @@
 
 /* Begin PBXFileReference section */
 		07A38E24212B45B3003BBF32 /* multi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = multi.entitlements; sourceTree = "<group>"; };
+		264035112DC4A68900B1FAF3 /* jingle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jingle.mp3; sourceTree = "<group>"; };
+		264035152DC4A71800B1FAF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Wattis-Regular.ttf"; sourceTree = "<group>"; };
 		2A189E281B9F5BFB008D605C /* BD.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BD.wav; sourceTree = "<group>"; };
 		2A373ED41B7AB25D004CFD99 /* multi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = multi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264035162DC4A71800B1FAF3 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		264035142DC4A71800B1FAF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				264035152DC4A71800B1FAF3 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2A373ECB1B7AB25D004CFD99 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +196,7 @@
 				93C77250274A9524005EFDEC /* watch WatchKit Extension */,
 				93C77268274A9526005EFDEC /* watchTests */,
 				93C77272274A9526005EFDEC /* watchUITests */,
+				264035142DC4A71800B1FAF3 /* Frameworks */,
 				2A373ED51B7AB25D004CFD99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -257,6 +272,7 @@
 			children = (
 				93C77251274A9524005EFDEC /* InterfaceController.h */,
 				93C77252274A9524005EFDEC /* InterfaceController.m */,
+				264035112DC4A68900B1FAF3 /* jingle.mp3 */,
 				93C77254274A9524005EFDEC /* ExtensionDelegate.h */,
 				93C77255274A9524005EFDEC /* ExtensionDelegate.m */,
 				93C77257274A9524005EFDEC /* NotificationController.h */,
@@ -475,6 +491,7 @@
 				2A189E291B9F5BFB008D605C /* BD.wav in Resources */,
 				2A373EE31B7AB25D004CFD99 /* Main.storyboard in Resources */,
 				2A373EE81B7AB25D004CFD99 /* LaunchScreen.xib in Resources */,
+				264035132DC4A68900B1FAF3 /* jingle.mp3 in Resources */,
 				9394D41227C2A1570044FBB7 /* Wattis-Regular.ttf in Resources */,
 				2A373EE51B7AB25D004CFD99 /* Images.xcassets in Resources */,
 			);
@@ -501,6 +518,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264035122DC4A68900B1FAF3 /* jingle.mp3 in Resources */,
 				93C7725E274A9526005EFDEC /* Assets.xcassets in Resources */,
 				93C7728A274AA67E005EFDEC /* Wattis-Regular.ttf in Resources */,
 			);
