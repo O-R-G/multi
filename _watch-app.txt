@@ -1,0 +1,59 @@
+Adding a watch app (independent) to existing ios app using objective-c and storyboards
+21 November 2021
+
+--
+
++ prepare (review)
+
+  storyboards and code
+
+	* https://developer.apple.com/documentation/watchkit/storyboard_support/building_watchos_app_interfaces_using_the_storyboard/connecting_your_user_interface_to_your_code?language=objc
+
+  adding a watch app based on ios app
+
+	* https://developer.apple.com/documentation/watchkit/creating_independent_watchos_apps/setting_up_a_watchos_project?language=objc
+
+	* https://www.raywenderlich.com/287-watchos-4-tutorial-part-1-getting-started
+
+  move all initializing behavior to new (void)initIosWatch from existing viewDidLoad() in ios app so 
+  that this logic can be repurposed in watch app
+
++ add watch view to existing ios app
+
+	* https://developer.apple.com/documentation/watchkit/creating_independent_watchos_apps/setting_up_a_watchos_project?language=objc
+
+  + Open your iOS app’s project in Xcode.
+
+  + Choose File > New > Target.
+
+  + Select the watchOS tab.
+
+  + Select “Watch App for iOS App” and click Next.
+
+  + In the target options sheet (Figure 2), enter a Product Name for the project. If you plan to implement notifications or complications, select the appropriate checkboxes, and click Finish. Xcode then asks you to activate the new scheme for your watch target. 
+
+  + Click Activate.
+
+	WatchKit App = bundle with assets
+	WatchKit Extension = code
+
+  + make watch app independent
+
+	* https://developer.apple.com/documentation/watchkit/creating_independent_watchos_apps?language=objc#topics
+
+	  + In Xcode, select your watchOS project to view its project editor.
+	  + In the General pane, select the WatchKit Extension target.
+	  + In the Deployment Info section, select the Supports Running Without iOS App Installation.
+
++ add icons (work from existing ios icons but need more sizes also)
+
+x share files / assets with watch target
+
+  ** largely unnecessary as many things specific to phone **
+  ** need to rebuild interface for watch **
+  
++ copy code from ViewController to InterfaceController
+
++ deploy to apple watch (confirm watch in xcode as valid device, provisioned, etc.)
+
+--

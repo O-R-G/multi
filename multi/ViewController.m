@@ -32,10 +32,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self initIOS];
+    [self initIosWatch];
+    // Set up and start background music
+    [self setupBackgroundMusic];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleDidBecomeActive)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleWillResignActive)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
 }
 
-- (void)initIOS
+- (void)initIosWatch
 {
     
     // instance variables
@@ -321,5 +333,47 @@ NSData* screenToPNG()
         [self sendMessage];
     }
 }
+
+// Add this new method to setup background music
+- (void)setupBackgroundMusic {
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSURL *audioURL = [bundle URLForResource:@"jingle" withExtension:@"mp3"];
+    if (audioURL) {
+        NSError *error = nil;
+        
+        // Initialize audio session for background playback
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
+        if (error) {
+            NSLog(@"Error setting audio session category: %@", error.localizedDescription);
+        }
+        
+        // Create audio player
+        self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:&error];
+        if (error) {
+            NSLog(@"Error creating audio player: %@", error.localizedDescription);
+            return;
+        }
+        
+        self.backgroundMusic.delegate = (id)self;
+        self.backgroundMusic.numberOfLoops = -1; // Infinite looping
+        [self.backgroundMusic prepareToPlay];
+        [self.backgroundMusic play];
+    } else {
+        NSLog(@"Background music file not found");
+    }
+}
+
+- (void)handleDidBecomeActive {
+    if (self.backgroundMusic && !self.backgroundMusic.isPlaying) {
+        [self.backgroundMusic play];
+    }
+}
+
+- (void)handleWillResignActive {
+    if (self.backgroundMusic && self.backgroundMusic.isPlaying) {
+        [self.backgroundMusic pause];
+    }
+}
+
 
 @end
