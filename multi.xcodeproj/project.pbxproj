@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A189E291B9F5BFB008D605C /* BD.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A189E281B9F5BFB008D605C /* BD.wav */; };
 		2A373EDA1B7AB25D004CFD99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373ED91B7AB25D004CFD99 /* main.m */; };
 		2A373EDD1B7AB25D004CFD99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EDC1B7AB25D004CFD99 /* AppDelegate.m */; };
 		2A373EE01B7AB25D004CFD99 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EDF1B7AB25D004CFD99 /* ViewController.m */; };
@@ -100,7 +99,6 @@
 /* Begin PBXFileReference section */
 		07A38E24212B45B3003BBF32 /* multi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = multi.entitlements; sourceTree = "<group>"; };
 		2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Wattis-Regular.ttf"; sourceTree = "<group>"; };
-		2A189E281B9F5BFB008D605C /* BD.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BD.wav; sourceTree = "<group>"; };
 		2A373ED41B7AB25D004CFD99 /* multi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = multi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A373ED81B7AB25D004CFD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A373ED91B7AB25D004CFD99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			children = (
 				07A38E24212B45B3003BBF32 /* multi.entitlements */,
 				9301A7ED2DE7B4CF005B4F6E /* BD.caf */,
-				2A189E281B9F5BFB008D605C /* BD.wav */,
 				2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */,
 				2A373EDB1B7AB25D004CFD99 /* AppDelegate.h */,
 				2A373EDC1B7AB25D004CFD99 /* AppDelegate.m */,
@@ -477,7 +474,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9301A7EF2DE7B4CF005B4F6E /* BD.caf in Resources */,
-				2A189E291B9F5BFB008D605C /* BD.wav in Resources */,
 				2A373EE31B7AB25D004CFD99 /* Main.storyboard in Resources */,
 				2A373EE81B7AB25D004CFD99 /* LaunchScreen.xib in Resources */,
 				9394D41227C2A1570044FBB7 /* Wattis-Regular.ttf in Resources */,
@@ -747,12 +743,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				INFOPLIST_FILE = multi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -767,12 +763,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				INFOPLIST_FILE = multi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -825,7 +821,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -834,7 +830,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.o-r-g.multi";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchkitapp";
@@ -863,7 +859,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -871,7 +867,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.o-r-g.multi";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchkitapp";
 				PRODUCT_NAME = Multi;
@@ -896,7 +892,7 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -908,7 +904,7 @@
 				INFOPLIST_KEY_WKExtensionDelegateClassName = ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchkitapp.watchkitappextension";
@@ -933,7 +929,7 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -944,7 +940,7 @@
 				INFOPLIST_KEY_WKExtensionDelegateClassName = ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchkitapp.watchkitappextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
