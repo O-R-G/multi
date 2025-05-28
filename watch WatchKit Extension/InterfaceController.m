@@ -31,52 +31,17 @@
     [self initWatchOS];
 
     self.crownSequencer.delegate = self;
-    // Set up and start background music
-    [self setupBackgroundMusic];
 }
-// Add this new method to setup background music
-- (void)setupBackgroundMusic {
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSURL *audioURL = [bundle URLForResource:@"jingle" withExtension:@"mp3"];
-    if (audioURL) {
-        NSError *error = nil;
-        
-        // Initialize audio session for background playback
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
-        if (error) {
-            NSLog(@"Error setting audio session category: %@", error.localizedDescription);
-        }
-        
-        // Create audio player
-        self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:&error];
-        if (error) {
-            NSLog(@"Error creating audio player: %@", error.localizedDescription);
-            return;
-        }
-        
-        self.backgroundMusic.delegate = (id)self;
-        self.backgroundMusic.numberOfLoops = -1; // Infinite looping
-        [self.backgroundMusic prepareToPlay];
-        [self.backgroundMusic play];
-    } else {
-        NSLog(@"Background music file not found");
-    }
-}
+
 - (void)willActivate {
     [self.crownSequencer focus];
-    // Resume background music when app becomes active
-    if (self.backgroundMusic && !paused) {
-        [self.backgroundMusic play];
-    }
+
     // This method is called when
     // watch view controller is about to be visible to user
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
-    if (self.backgroundMusic) {
-        [self.backgroundMusic pause];
-    }
 }
 
 - (void)initWatchOS {

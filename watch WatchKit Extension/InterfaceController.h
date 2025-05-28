@@ -8,7 +8,7 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
-#import <AVFoundation/AVFoundation.h>
+
 // WKCrownDelegate
 
 @interface InterfaceController : WKInterfaceController <WKCrownDelegate> {
@@ -24,8 +24,6 @@
 @property (strong, nonatomic) IBOutlet WKInterfaceLabel *mouthLabel;
 @property (strong, nonatomic) IBOutlet WKTapGestureRecognizer *singleTapRecognizer;
 @property (strong, nonatomic) IBOutlet WKInterfaceSlider *hzSlider;
-// Add audio player property
-@property (nonatomic, strong) AVAudioPlayer *backgroundMusic;
 
 @property (readonly) NSArray *eye;
 @property (readonly) NSArray *mouth;
