@@ -32,6 +32,7 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *doubleTapRecognizer;
 @property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longPressRecognizer;
 @property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longLongPressRecognizer;
+@property (nonatomic, assign) SystemSoundID customSoundID;
 
 - (IBAction)singleTapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender;

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# setup xcodebuild environment
+SCHEME="multi"
+DEVICEID="BCB94ECD-C8ED-44C2-94A1-11BA11C49F7E"
+DESTINATION="platform=iOS Simulator,name=iPhone 16,OS=18.4"
+BUNDLEPATH="/Users/reinfurt/Library/Developer/Xcode/DerivedData/multi-gewlnlwrghrquaaugzyvvcoompcu/Build/Products/Debug-iphonesimulator/multi.app"
+BUNDLEID="com.o-r-g.multi"
+
+# open simulator (non-blocking)
+open -a Simulator --args -CurrentDeviceUDID "$DEVICEID"
+
+# build, install, and launch
+xcodebuild -scheme "$SCHEME" -destination "$DESTINATION" build && \
+xcrun simctl install "$DEVICEID" "$BUNDLEPATH" && \
+xcrun simctl launch "$DEVICEID" "$BUNDLEID"

@@ -1,2 +1,4 @@
 *.mov
 *.tif
+*.xcuserdatad
+.DS_Store

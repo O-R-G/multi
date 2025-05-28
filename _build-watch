@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# setup xcodebuild environment 
+SCHEME="watch"
+DEVICEID="EA5A21CA-8A4A-4C57-B487-5AEBD2250E59"
+DESTINATION="platform=watchsimulator,name=Apple Watch Series 10 (42mm),OS=11.4"
+BUNDLEPATH="/Users/reinfurt/Library/Developer/Xcode/DerivedData/multi-gewlnlwrghrquaaugzyvvcoompcu/Build/Products/Debug-watchsimulator/Multi.app"
+BUNDLEID="com.o-r-g.multi.watchkitapp"
+
+# open simulator (non-blocking)
+open -a Simulator --args -CurrentDeviceUDID "$DEVICEID"
+
+# build, install, and launch
+xcodebuild -scheme "$SCHEME" -destination "$DESTINATION" build && \
+xcrun simctl install "$DEVICEID" "$BUNDLEPATH" && \
+xcrun simctl launch "$DEVICEID" "$BUNDLEID"
+

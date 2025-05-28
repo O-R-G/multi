@@ -21,7 +21,6 @@
 @synthesize rightEyeLabel;
 @synthesize mouthLabel;
 @synthesize hzLabel;
-@synthesize soundFileObject;
 @synthesize singleTapRecognizer;
 @synthesize doubleTapRecognizer;
 @synthesize longPressRecognizer;
@@ -31,7 +30,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+        
+    // load custom sound
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"BD" ofType:@"caf"];
+    NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &_customSoundID);
+
     [self initIosWatch];
 }
 
@@ -76,15 +80,7 @@
     leftEyeLabel.font = multiFont;
     rightEyeLabel.font = multiFont;
     mouthLabel.font = multiFont;
-
-    // Get the main bundle for the app
-    CFBundleRef mainBundle = CFBundleGetMainBundle ();
-    // Get the URL to the sound file to play.
-    // The file in this case is "BD.wav"
-    CFURLRef soundFileURLRef = CFBundleCopyResourceURL(mainBundle, CFSTR ("BD"), CFSTR ("wav"), NULL);
-    // Create a system sound object representing the sound file
-    AudioServicesCreateSystemSoundID(soundFileURLRef, &soundFileObject);
-
+     
     [singleTapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
     [singleTapRecognizer requireGestureRecognizerToFail:longPressRecognizer];
     self.longPressRecognizer.delegate = self;
@@ -129,7 +125,7 @@
 
 - (void) multiTimerCallBack
 {
-    AudioServicesPlaySystemSound (self.soundFileObject);
+    AudioServicesPlaySystemSound(self.customSoundID);
     // AudioServicesPlaySystemSound (1305);
     int i = arc4random_uniform((int)eye.count);
     self.leftEyeLabel.text = eye[i];

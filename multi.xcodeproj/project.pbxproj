@@ -15,6 +15,8 @@
 		2A373EE51B7AB25D004CFD99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A373EE41B7AB25D004CFD99 /* Images.xcassets */; };
 		2A373EE81B7AB25D004CFD99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A373EE61B7AB25D004CFD99 /* LaunchScreen.xib */; };
 		2A373EF41B7AB25D004CFD99 /* multiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EF31B7AB25D004CFD99 /* multiTests.m */; };
+		9301A7EE2DE7B4CF005B4F6E /* BD.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9301A7ED2DE7B4CF005B4F6E /* BD.caf */; };
+		9301A7EF2DE7B4CF005B4F6E /* BD.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9301A7ED2DE7B4CF005B4F6E /* BD.caf */; };
 		9394D41227C2A1570044FBB7 /* Wattis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */; };
 		93AD5A17277BC5030010AE42 /* Wattis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */; };
 		93C77245274A9522005EFDEC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C77243274A9522005EFDEC /* Interface.storyboard */; };
@@ -112,6 +114,7 @@
 		2A373EED1B7AB25D004CFD99 /* multiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = multiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A373EF21B7AB25D004CFD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A373EF31B7AB25D004CFD99 /* multiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = multiTests.m; sourceTree = "<group>"; };
+		9301A7ED2DE7B4CF005B4F6E /* BD.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BD.caf; sourceTree = "<group>"; };
 		93C77241274A9522005EFDEC /* Multi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C77244274A9522005EFDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		93C77246274A9524005EFDEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				07A38E24212B45B3003BBF32 /* multi.entitlements */,
+				9301A7ED2DE7B4CF005B4F6E /* BD.caf */,
 				2A189E281B9F5BFB008D605C /* BD.wav */,
 				2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */,
 				2A373EDB1B7AB25D004CFD99 /* AppDelegate.h */,
@@ -472,6 +476,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9301A7EF2DE7B4CF005B4F6E /* BD.caf in Resources */,
 				2A189E291B9F5BFB008D605C /* BD.wav in Resources */,
 				2A373EE31B7AB25D004CFD99 /* Main.storyboard in Resources */,
 				2A373EE81B7AB25D004CFD99 /* LaunchScreen.xib in Resources */,
@@ -484,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9301A7EE2DE7B4CF005B4F6E /* BD.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
