@@ -8,6 +8,6 @@
 
 #import <WatchKit/WatchKit.h>
 
-@interface ExtensionDelegate : NSObject <WKApplicationDelegate>
+@interface ExtensionDelegate : NSObject <WKExtensionDelegate>
 
 @end

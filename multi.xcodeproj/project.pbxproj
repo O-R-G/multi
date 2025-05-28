@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		264035122DC4A68900B1FAF3 /* jingle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264035112DC4A68900B1FAF3 /* jingle.mp3 */; };
+		264035132DC4A68900B1FAF3 /* jingle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264035112DC4A68900B1FAF3 /* jingle.mp3 */; };
 		264035162DC4A71800B1FAF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264035152DC4A71800B1FAF3 /* AVFoundation.framework */; };
-		264035182DC4A73700B1FAF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 264035172DC4A73700B1FAF3 /* main.m */; };
-		2640351C2DC4AE3500B1FAF3 /* jingle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2640351B2DC4AE3500B1FAF3 /* jingle.mp3 */; };
 		2A189E291B9F5BFB008D605C /* BD.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A189E281B9F5BFB008D605C /* BD.wav */; };
 		2A373EDA1B7AB25D004CFD99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373ED91B7AB25D004CFD99 /* main.m */; };
 		2A373EDD1B7AB25D004CFD99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A373EDC1B7AB25D004CFD99 /* AppDelegate.m */; };
@@ -23,6 +22,7 @@
 		93AD5A17277BC5030010AE42 /* Wattis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */; };
 		93C77245274A9522005EFDEC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C77243274A9522005EFDEC /* Interface.storyboard */; };
 		93C77247274A9524005EFDEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C77246274A9524005EFDEC /* Assets.xcassets */; };
+		93C7724D274A9524005EFDEC /* watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 93C7724C274A9524005EFDEC /* watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		93C77253274A9524005EFDEC /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C77252274A9524005EFDEC /* InterfaceController.m */; };
 		93C77256274A9524005EFDEC /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C77255274A9524005EFDEC /* ExtensionDelegate.m */; };
 		93C77259274A9524005EFDEC /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C77258274A9524005EFDEC /* NotificationController.m */; };
@@ -36,19 +36,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		264035192DC4A73700B1FAF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A373ECC1B7AB25D004CFD99 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 93C77240274A9522005EFDEC;
-			remoteInfo = watch;
-		};
 		2A373EEE1B7AB25D004CFD99 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A373ECC1B7AB25D004CFD99 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2A373ED31B7AB25D004CFD99;
 			remoteInfo = multi;
+		};
+		93C7724E274A9524005EFDEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A373ECC1B7AB25D004CFD99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93C7724B274A9524005EFDEC;
+			remoteInfo = "watch WatchKit Extension";
+		};
+		93C77266274A9526005EFDEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A373ECC1B7AB25D004CFD99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93C7724B274A9524005EFDEC;
+			remoteInfo = "watch WatchKit Extension";
 		};
 		93C77270274A9526005EFDEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -78,14 +85,23 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93C7727D274A9526005EFDEC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				93C7724D274A9524005EFDEC /* watch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		07A38E24212B45B3003BBF32 /* multi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = multi.entitlements; sourceTree = "<group>"; };
 		264035112DC4A68900B1FAF3 /* jingle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jingle.mp3; sourceTree = "<group>"; };
 		264035152DC4A71800B1FAF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		264035172DC4A73700B1FAF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2640351B2DC4AE3500B1FAF3 /* jingle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jingle.mp3; sourceTree = "<group>"; };
 		2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Wattis-Regular.ttf"; sourceTree = "<group>"; };
 		2A189E281B9F5BFB008D605C /* BD.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BD.wav; sourceTree = "<group>"; };
 		2A373ED41B7AB25D004CFD99 /* multi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = multi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +120,7 @@
 		93C77241274A9522005EFDEC /* Multi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C77244274A9522005EFDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		93C77246274A9524005EFDEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93C7724C274A9524005EFDEC /* watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C77251274A9524005EFDEC /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
 		93C77252274A9524005EFDEC /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		93C77254274A9524005EFDEC /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
@@ -190,6 +207,7 @@
 				2A373ED41B7AB25D004CFD99 /* multi.app */,
 				2A373EED1B7AB25D004CFD99 /* multiTests.xctest */,
 				93C77241274A9522005EFDEC /* Multi.app */,
+				93C7724C274A9524005EFDEC /* watch WatchKit Extension.appex */,
 				93C77265274A9526005EFDEC /* watchTests.xctest */,
 				93C7726F274A9526005EFDEC /* watchUITests.xctest */,
 			);
@@ -199,7 +217,6 @@
 		2A373ED61B7AB25D004CFD99 /* multi */ = {
 			isa = PBXGroup;
 			children = (
-				2640351B2DC4AE3500B1FAF3 /* jingle.mp3 */,
 				07A38E24212B45B3003BBF32 /* multi.entitlements */,
 				2A189E281B9F5BFB008D605C /* BD.wav */,
 				2A07D23A1B7AE5C90021E7CA /* Wattis-Regular.ttf */,
@@ -265,7 +282,6 @@
 				93C7725D274A9526005EFDEC /* Assets.xcassets */,
 				93C7725F274A9526005EFDEC /* Info.plist */,
 				93C77260274A9526005EFDEC /* PushNotificationPayload.apns */,
-				264035172DC4A73700B1FAF3 /* main.m */,
 			);
 			path = "watch WatchKit Extension";
 			sourceTree = "<group>";
@@ -332,17 +348,34 @@
 			buildConfigurationList = 93C77285274A9526005EFDEC /* Build configuration list for PBXNativeTarget "watch" */;
 			buildPhases = (
 				93C7723F274A9522005EFDEC /* Resources */,
+				93C7727D274A9526005EFDEC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93C7724F274A9524005EFDEC /* PBXTargetDependency */,
+			);
+			name = watch;
+			productName = watch;
+			productReference = 93C77241274A9522005EFDEC /* Multi.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		93C7724B274A9524005EFDEC /* watch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93C77284274A9526005EFDEC /* Build configuration list for PBXNativeTarget "watch WatchKit Extension" */;
+			buildPhases = (
 				93C77248274A9524005EFDEC /* Sources */,
 				93C77249274A9524005EFDEC /* Frameworks */,
+				93C7724A274A9524005EFDEC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = watch;
-			productName = watch;
-			productReference = 93C77241274A9522005EFDEC /* Multi.app */;
-			productType = "com.apple.product-type.application";
+			name = "watch WatchKit Extension";
+			productName = "watch WatchKit Extension";
+			productReference = 93C7724C274A9524005EFDEC /* watch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		93C77264274A9526005EFDEC /* watchTests */ = {
 			isa = PBXNativeTarget;
@@ -355,7 +388,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2640351A2DC4A73700B1FAF3 /* PBXTargetDependency */,
+				93C77267274A9526005EFDEC /* PBXTargetDependency */,
 			);
 			name = watchTests;
 			productName = watchTests;
@@ -386,8 +419,7 @@
 		2A373ECC1B7AB25D004CFD99 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "O-R-G, Inc.";
 				TargetAttributes = {
 					2A373ED31B7AB25D004CFD99 = {
@@ -409,11 +441,16 @@
 						DevelopmentTeam = 2T5W462SEL;
 						ProvisioningStyle = Automatic;
 					};
+					93C7724B274A9524005EFDEC = {
+						CreatedOnToolsVersion = 13.1;
+						DevelopmentTeam = 2T5W462SEL;
+						ProvisioningStyle = Automatic;
+					};
 					93C77264274A9526005EFDEC = {
 						CreatedOnToolsVersion = 13.1;
 						DevelopmentTeam = 2T5W462SEL;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 93C77240274A9522005EFDEC;
+						TestTargetID = 93C7724B274A9524005EFDEC;
 					};
 					93C7726E274A9526005EFDEC = {
 						CreatedOnToolsVersion = 13.1;
@@ -439,6 +476,7 @@
 				2A373ED31B7AB25D004CFD99 /* multi */,
 				2A373EEC1B7AB25D004CFD99 /* multiTests */,
 				93C77240274A9522005EFDEC /* watch */,
+				93C7724B274A9524005EFDEC /* watch WatchKit Extension */,
 				93C77264274A9526005EFDEC /* watchTests */,
 				93C7726E274A9526005EFDEC /* watchUITests */,
 			);
@@ -450,10 +488,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2640351C2DC4AE3500B1FAF3 /* jingle.mp3 in Resources */,
 				2A189E291B9F5BFB008D605C /* BD.wav in Resources */,
 				2A373EE31B7AB25D004CFD99 /* Main.storyboard in Resources */,
 				2A373EE81B7AB25D004CFD99 /* LaunchScreen.xib in Resources */,
+				264035132DC4A68900B1FAF3 /* jingle.mp3 in Resources */,
 				9394D41227C2A1570044FBB7 /* Wattis-Regular.ttf in Resources */,
 				2A373EE51B7AB25D004CFD99 /* Images.xcassets in Resources */,
 			);
@@ -471,11 +509,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				93AD5A17277BC5030010AE42 /* Wattis-Regular.ttf in Resources */,
-				264035122DC4A68900B1FAF3 /* jingle.mp3 in Resources */,
 				93C77247274A9524005EFDEC /* Assets.xcassets in Resources */,
-				93C7728A274AA67E005EFDEC /* Wattis-Regular.ttf in Resources */,
 				93C77245274A9522005EFDEC /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93C7724A274A9524005EFDEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264035122DC4A68900B1FAF3 /* jingle.mp3 in Resources */,
 				93C7725E274A9526005EFDEC /* Assets.xcassets in Resources */,
+				93C7728A274AA67E005EFDEC /* Wattis-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +563,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264035182DC4A73700B1FAF3 /* main.m in Sources */,
 				93C77256274A9524005EFDEC /* ExtensionDelegate.m in Sources */,
 				93C7725C274A9524005EFDEC /* ComplicationController.m in Sources */,
 				93C77253274A9524005EFDEC /* InterfaceController.m in Sources */,
@@ -546,15 +590,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2640351A2DC4A73700B1FAF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 93C77240274A9522005EFDEC /* watch */;
-			targetProxy = 264035192DC4A73700B1FAF3 /* PBXContainerItemProxy */;
-		};
 		2A373EEF1B7AB25D004CFD99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2A373ED31B7AB25D004CFD99 /* multi */;
 			targetProxy = 2A373EEE1B7AB25D004CFD99 /* PBXContainerItemProxy */;
+		};
+		93C7724F274A9524005EFDEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93C7724B274A9524005EFDEC /* watch WatchKit Extension */;
+			targetProxy = 93C7724E274A9524005EFDEC /* PBXContainerItemProxy */;
+		};
+		93C77267274A9526005EFDEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93C7724B274A9524005EFDEC /* watch WatchKit Extension */;
+			targetProxy = 93C77266274A9526005EFDEC /* PBXContainerItemProxy */;
 		};
 		93C77271274A9526005EFDEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -630,7 +679,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -688,7 +736,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -716,10 +763,7 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				INFOPLIST_FILE = multi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -739,10 +783,7 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				INFOPLIST_FILE = multi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -761,11 +802,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = multiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/multi.app/multi";
@@ -778,11 +815,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = multiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/multi.app/multi";
@@ -793,7 +826,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -810,16 +842,10 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
+				IBSC_MODULE = watch_WatchKit_Extension;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 O-R-G, Inc. All rights reserved.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.o-r-g.multi";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
 				MARKETING_VERSION = 1.0.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -830,7 +856,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -838,7 +864,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -854,16 +879,10 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
+				IBSC_MODULE = watch_WatchKit_Extension;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 O-R-G, Inc. All rights reserved.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.o-r-g.multi";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
 				MARKETING_VERSION = 1.0.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchkitapp";
@@ -873,7 +892,79 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		93C7727E274A9526005EFDEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2T5W462SEL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "watch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "watch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 O-R-G, Inc. All rights reserved.";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchkitapp.watchkitappextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		93C7727F274A9526005EFDEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = 2T5W462SEL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "watch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "watch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 O-R-G, Inc. All rights reserved.";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0.2;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchkitapp.watchkitappextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -894,11 +985,7 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -907,7 +994,7 @@
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Multi";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watch WatchKit Extension.appex/watch WatchKit Extension";
 				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
@@ -928,11 +1015,7 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchTests";
@@ -940,7 +1023,7 @@
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Multi";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/watch WatchKit Extension.appex/watch WatchKit Extension";
 				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
@@ -961,11 +1044,7 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -994,11 +1073,7 @@
 				DEVELOPMENT_TEAM = 2T5W462SEL;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.multi.watchUITests";
@@ -1037,6 +1112,15 @@
 			buildConfigurations = (
 				2A373EFB1B7AB25D004CFD99 /* Debug */,
 				2A373EFC1B7AB25D004CFD99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93C77284274A9526005EFDEC /* Build configuration list for PBXNativeTarget "watch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93C7727E274A9526005EFDEC /* Debug */,
+				93C7727F274A9526005EFDEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

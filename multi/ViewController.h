@@ -10,7 +10,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <MessageUI/MessageUI.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController : UIViewController <MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate>
 {
@@ -33,7 +32,6 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *doubleTapRecognizer;
 @property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longPressRecognizer;
 @property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longLongPressRecognizer;
-@property (nonatomic, strong) AVAudioPlayer *backgroundMusic;
 
 - (IBAction)singleTapAction:(UITapGestureRecognizer *)sender;
 - (IBAction)doubleTapAction:(UITapGestureRecognizer *)sender;
